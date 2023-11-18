@@ -1,0 +1,28 @@
+name: wsqview
+base: core20
+version: '1.0'
+summary: Aplicativo Java WSQ para PNG
+description: Aplicativo que converte imagens no formato WSQ para PNG.
+
+confinement: strict
+grade: stable
+
+apps:
+  wsqview:
+    command: bin/run
+    plugs: [desktop, x11, home, network]
+    desktop: wsqview.desktop
+
+parts:
+  wsqview:
+    plugin: dump
+    source: .
+    build-packages:
+      - openjdk-17-jdk  # a depedência mudou para carregar o pacote jdk corretamente para o runtime do snap
+    stage-packages:
+      - openjdk-17-jre
+    build-attributes: [no-patchelf]
+
+    organize:
+      'build/libs/wsqView.jar': 'wsqView.jar'
+      'run': 'bin/run'

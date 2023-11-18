@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=wsqview
+Exec=wsqview
+Icon=/home/parpineli/Downloads/kLDad.jpg
+Comment=Wsq View
+Categories=Utility;
+Terminal=false
